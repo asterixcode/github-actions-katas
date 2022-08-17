@@ -34,7 +34,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: build
+          name: code
           path: .
       - name: Upload Jar Artifact
         uses: actions/upload-artifact@v2
@@ -64,7 +64,7 @@ jobs:
     needs: [Build,Test]
     runs-on: ubuntu-latest
     steps:
-      - name: Download code
+      - name: Download code artifact
         uses: actions/download-artifact@v2
         with:
           name: code
